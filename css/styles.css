@@ -97,6 +97,7 @@ menu {
 }
 
 .site-menu {
+  position: relative;
   display: flex;
   align-items: center;
 
@@ -104,12 +105,44 @@ menu {
   letter-spacing: 0.02em;
 }
 
-.site-menu li:not(:last-child) {
+/* .site-menu-item {
+  display: block;
+} */
+
+.site-menu-item:not(:last-child) {
   margin-right: 50px;
 }
 
 .site-menu-ref {
   display: block;
+}
+
+.site-menu-item:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  /* width: 100%; */
+  height: 4px;
+  border-radius: 2px;
+
+  background-color: var(--accent-text-color);
+  opacity: 0;
+}
+
+.site-menu-item:hover:after {
+  opacity: 1;
+}
+
+.site-menu-item:nth-child(1):after {
+  width: 47px;
+}
+
+.site-menu-item:nth-child(2):after {
+  width: 77px;
+}
+
+.site-menu-item:nth-child(3):after {
+  width: 68px;
 }
 
 .contacts {
@@ -304,6 +337,7 @@ h1 {
 }
 
 .applications li {
+  position: relative;
   width: 370px;
   display: flex;
   flex-direction: column;
@@ -318,13 +352,18 @@ h1 {
   overflow: hidden;
 }
 
-.applications h3 {
+.applications-header {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 27px;
   padding-bottom: 27px;
 
   color: var(--title-text-color);
+  opacity: 0.8;
   background-color: var(--background-footer-color);
 
   font-size: inherit;
@@ -760,6 +799,34 @@ address {
   line-height: 1.88;
 }
 
-p.portfolio-works.hover-text {
-  display: none;
+.portfolio-works-pic {
+  position: relative;
+}
+
+.hover-text {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+  align-items: center;
+  top: 0;
+  /* padding: 63px 24px; */
+
+  font-size: 18px;
+  line-height: 1.56;
+
+  color: var(--title-text-color);
+  background-color: var(--accent-text-color);
+  border-color: var(--accent-text-color);
+  /* background-attachment: local; */
+  /* background-origin: border-box; */
+  opacity: 0;
+  /* display: none; */
+}
+
+.portfolio-works-list-item:hover .hover-text,
+.portfolio-works-list-item:focus .hover-text {
+  opacity: 0.9;
 }
