@@ -119,6 +119,7 @@ menu {
 }
 
 .site-menu-ref {
+  position: relative;
   display: block;
 }
 
@@ -126,7 +127,10 @@ menu {
   color: var(--accent-text-color);
 }
 
-.current-page:after {
+.current-page .site-menu-ref:after {
+  position: absolute;
+  bottom: 0;
+
   display: block;
   content: "";
   width: 100%;
