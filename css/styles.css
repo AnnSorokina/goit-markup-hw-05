@@ -93,6 +93,10 @@ menu {
 
 /* Хедер*/
 
+.header {
+  border-bottom: 1px solid #ececec;
+}
+
 .main-nav {
   display: flex;
   align-items: center;
@@ -761,7 +765,6 @@ address {
   width: calc((100% - 2 * 30px) / 3);
   display: flex;
   flex-direction: column;
-  border: 1px solid #eeeeee;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -782,14 +785,25 @@ address {
 }
 
 .portfolio-works-pic {
+  position: relative;
+  border-top: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   overflow: hidden;
 }
 
-.portfolio-works-title {
+.portfolio-works-list-item:hover .portfolio-works-pic {
+  border: none;
+}
+
+.portfolio-works-info {
   padding: 20px 24px;
   background-color: var(--title-text-color);
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
 }
 
 .portfolio-works-list h2 {
@@ -800,10 +814,6 @@ address {
 .portfolio-works-p {
   font-size: 16px;
   line-height: 1.88;
-}
-
-.portfolio-works-pic {
-  position: relative;
 }
 
 .portfolio-works-pic:before {
